@@ -92,7 +92,7 @@ const ButtModifier = styled.h2`
   border-radius: 5px;
   cursor: pointer;
 `;
-const HotelDetail = ({ hotel, moddifer }) => {
+const HotelDetail = ({ hotel }) => {
   const router = useRouter();
 
   const handleBackClick = () => {
@@ -125,7 +125,7 @@ const HotelDetail = ({ hotel, moddifer }) => {
             <b>Prix: </b>
             {hotel.price} {hotel.devise} par nuit
           </StyleText>
-          <ButtModifier onClick={moddifer}>Modifier</ButtModifier>
+          <ButtModifier>Modifier</ButtModifier>
         </HotelDetailInfo>
       </HotelDetailsContainer>
     </>

@@ -9,17 +9,20 @@ import { FaStar } from "react-icons/fa";
 import { PiUsersThreeFill } from "react-icons/pi";
 import CardsFunction from "./Cards";
 
-const DivGlobalCards = styled.div`
+const DivGlobalBg = styled.div`
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
-  align-items: center;
-  gap: 45px;
-  padding-left: 25px;
-  padding-right: 25px;
-`;
+  gap: 3%;
+  padding-left: 20px;
 
-const DivGlobalBg = styled.div``;
+  @media (max-width: 880px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 0px;
+    gap: 0;
+  }
+`;
 
 const Corps = () => {
   const [hotels, setHotels] = useState([]);
@@ -54,49 +57,44 @@ const Corps = () => {
   }, []);
   return (
     <DivGlobalBg>
-      <DivGlobalCards>
-        <CardsFunction
-          background="#A88ADD"
-          icons={FaEnvelopeOpen}
-          nombre="121"
-          title="Formulaires"
-        />
+      <CardsFunction
+        background="#A88ADD"
+        icons={FaEnvelopeOpen}
+        nombre="121"
+        title="Formulaires"
+      />
 
-        <CardsFunction
-          background="#0CC2AA"
-          icons={MdEmail}
-          nombre="40"
-          title="Message"
-        />
-        <CardsFunction
-          background="#FCC100"
-          icons={PiUsersThreeFill}
-          nombre={user.length}
-          title="Utilisateur"
-        />
-      </DivGlobalCards>
+      <CardsFunction
+        background="#0CC2AA"
+        icons={MdEmail}
+        nombre="40"
+        title="Message"
+      />
+      <CardsFunction
+        background="#FCC100"
+        icons={PiUsersThreeFill}
+        nombre={user.length}
+        title="Utilisateur"
+      />
+      <CardsFunction
+        background="#F90000"
+        icons={MdOutlineAlternateEmail}
+        nombre="25"
+        title="E-mail"
+      />
+      <CardsFunction
+        background="#9C22B0"
+        icons={TbHotelService}
+        nombre={hotels.length}
+        title="Hotels"
+      />
 
-      <DivGlobalCards>
-        <CardsFunction
-          background="#F90000"
-          icons={MdOutlineAlternateEmail}
-          nombre="25"
-          title="E-mail"
-        />
-        <CardsFunction
-          background="#9C22B0"
-          icons={TbHotelService}
-          nombre={hotels.length}
-          title="Hotels"
-        />
-
-        <CardsFunction
-          background="#1565C0"
-          icons={FaStar}
-          nombre="02"
-          title="Etoil"
-        />
-      </DivGlobalCards>
+      <CardsFunction
+        background="#1565C0"
+        icons={FaStar}
+        nombre="02"
+        title="Etoil"
+      />
     </DivGlobalBg>
   );
 };

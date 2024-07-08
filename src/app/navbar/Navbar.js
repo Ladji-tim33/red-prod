@@ -2,9 +2,8 @@
 import styled from "styled-components";
 import { IoMdNotificationsOutline } from "react-icons/io";
 import { FaArrowRightFromBracket } from "react-icons/fa6";
-import Link from 'next/link';
-
-
+import Link from "next/link";
+import imageUrl from "../images/yass.jpg";
 
 const Dashboard = styled.p`
   font-size: 20px;
@@ -27,7 +26,6 @@ const DivIcone = styled.div`
   padding-right: 25px;
 `;
 
-
 // Le style de input
 
 const SearchInput = styled.input`
@@ -47,10 +45,11 @@ const SearchInput = styled.input`
   }
 `;
 
-const DivProfil = styled.div`
+const DivProfil = styled.img`
   width: 30px;
   height: 30px;
   border-radius: 50%;
+
   border: 1px solid #000000;
 `;
 
@@ -62,25 +61,23 @@ const DisplayDiv = styled.div`
   border-bottom: 2px solid #f0f0f0;
 `;
 
-
 const MyNav = () => {
-    return ( 
-        <>
-          <DisplayDiv>
-            <Dashboard>Dashboard</Dashboard>
-            <DivIcone>
-              <SearchInput placeholder="Recherche..." />
-              <IoMdNotificationsOutline />
-              <DivProfil />
-              <Link href="/connexion">
-              <FaArrowRightFromBracket />
-              </Link>
-            </DivIcone>
+  return (
+    <>
+      <DisplayDiv>
+        <Dashboard>Dashboard</Dashboard>
+        <DivIcone>
+          <SearchInput placeholder="Recherche..." />
+          <IoMdNotificationsOutline />
+          <DivProfil src={imageUrl} alt="img" />
+          <Link href="/connexion">
+            <FaArrowRightFromBracket />
+          </Link>
+        </DivIcone>
+      </DisplayDiv>
+      <hr />
+    </>
+  );
+};
 
-          </DisplayDiv>
-          <hr/>
-        </>
-     );
-}
- 
 export default MyNav;

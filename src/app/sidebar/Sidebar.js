@@ -50,7 +50,6 @@ const List = styled.div`
 
 const ListlI = styled.div`
   display: flex;
-  display: flex;
   flex-direction: row;
   align-items: center;
   padding-left: 15px;
